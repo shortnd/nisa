@@ -1,0 +1,43 @@
+{
+  "connection": "default",
+  "collectionName": "teams",
+  "info": {
+    "name": "Team"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "private": false,
+      "required": true,
+      "unique": true
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "website": {
+      "type": "string"
+    },
+    "external_roster": {
+      "type": "string"
+    },
+    "games": {
+      "via": "visitor",
+      "collection": "game"
+    },
+    "roster": {
+      "via": "team",
+      "collection": "player"
+    },
+    "standing": {
+      "via": "team",
+      "model": "standing"
+    }
+  }
+}

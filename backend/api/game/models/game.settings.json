@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "games",
+  "info": {
+    "name": "Game"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "watch": {
+      "type": "string"
+    },
+    "home": {
+      "model": "team",
+      "via": "games"
+    },
+    "visitor": {
+      "model": "team",
+      "via": "games"
+    },
+    "location": {
+      "via": "games",
+      "model": "location"
+    }
+  }
+}

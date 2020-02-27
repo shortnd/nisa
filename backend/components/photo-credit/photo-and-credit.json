@@ -1,0 +1,21 @@
+{
+  "info": {
+    "name": "Photo & Credit",
+    "icon": "photo-video"
+  },
+  "options": {},
+  "attributes": {
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "credit": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "connection": "default",
+  "collectionName": "components_photo_credit_photo_and_credits"
+}

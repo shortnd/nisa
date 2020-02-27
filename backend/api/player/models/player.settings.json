@@ -1,0 +1,53 @@
+{
+  "connection": "default",
+  "collectionName": "players",
+  "info": {
+    "name": "Player"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Number": {
+      "type": "integer"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "forward",
+        "defender",
+        "midfielder",
+        "goalkeeper",
+        "head_coach",
+        "assistant_coach",
+        "goalkeeper_coach",
+        "technical_director",
+        "associate_head_coach"
+      ],
+      "default": "forward",
+      "required": true
+    },
+    "photo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "photo-credit.photo-and-credit"
+    },
+    "team": {
+      "model": "team",
+      "via": "roster"
+    },
+    "externalRoster": {
+      "type": "boolean",
+      "default": false
+    },
+    "externalRosterURL": {
+      "type": "string"
+    }
+  }
+}

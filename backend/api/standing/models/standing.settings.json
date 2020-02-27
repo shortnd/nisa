@@ -1,0 +1,72 @@
+{
+  "connection": "default",
+  "collectionName": "standings",
+  "info": {
+    "name": "Standing"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "team": {
+      "model": "team",
+      "via": "standing"
+    },
+    "season": {
+      "type": "enumeration",
+      "enum": [
+        "spring",
+        "summer",
+        "fall"
+      ],
+      "default": "spring",
+      "required": true
+    },
+    "GP": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "W": {
+      "type": "integer",
+      "default": 0
+    },
+    "D": {
+      "type": "integer",
+      "default": 0
+    },
+    "L": {
+      "type": "integer",
+      "default": 0
+    },
+    "Home": {
+      "type": "integer",
+      "default": 0
+    },
+    "Away": {
+      "type": "integer",
+      "default": 0
+    },
+    "Latest": {
+      "type": "integer",
+      "default": 0
+    },
+    "GF": {
+      "type": "integer",
+      "default": 0
+    },
+    "GA": {
+      "type": "integer",
+      "default": 0
+    },
+    "GD": {
+      "type": "integer",
+      "default": 0
+    },
+    "PT": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
